@@ -22,11 +22,15 @@ def sumNum(n):
     return n + sumNum(n-1)
 
 def sumOfDigits(n):
-    
+    if n%10 == n:
+        return n
+    return sumOfDigits(n%10) + sumOfDigits(n//10)
     
 if __name__ =="__main__":
-    product = productNum(4)
-    print(product)
+    # product = productNum(4)
+    # print(product)
 
-    sum = sumNum(5)
-    print(sum)
+    # sum = sumNum(5)
+    # print(sum)
+
+    print(sumOfDigits(1234))
